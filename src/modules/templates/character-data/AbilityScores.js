@@ -2,7 +2,7 @@ import React from 'react';
 
 const AbilityScores = ({ desc, full_name, skills, search }) => {
   const handleLink = url => {
-    search(url, 'Skills');
+    search(url, 'skills');
   };
   return (
     <div>
@@ -13,9 +13,9 @@ const AbilityScores = ({ desc, full_name, skills, search }) => {
       ))}
       <h2>Skills:</h2>
       {skills.map(item => (
-        <a className='link' onClick={() => handleLink(item.url)}>
+        <button className='link' onClick={() => handleLink(item.url)}>
           {item.name}
-        </a>
+        </button>
       ))}
     </div>
   );

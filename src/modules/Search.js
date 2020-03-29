@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 const Search = ({ search, setType }) => {
   const [state, setState] = useState({
     search: '',
-    category: 'Character-Data',
-    subcategory1: 'Ability-Scores',
-    subcategory2: 'Classes',
-    subcategory3: 'Races',
-    subcategory4: 'Equipment',
-    subcategory7: 'Conditions'
+    category: 'character-data',
+    subcategory1: 'ability-scores',
+    subcategory2: 'classes',
+    subcategory3: 'races',
+    subcategory4: 'equipment',
+    subcategory7: 'conditions'
   });
 
   const handleChange = e =>
@@ -20,26 +20,26 @@ const Search = ({ search, setType }) => {
     let type;
 
     switch (state.category) {
-      case 'Character-Data':
+      case 'character-data':
         sub = state.subcategory1;
         break;
-      case 'Classes':
+      case 'classes':
         sub = state.subcategory2;
         break;
-      case 'Races':
+      case 'races':
         sub = state.subcategory3;
         break;
-      case 'Equipment':
+      case 'equipment':
         sub = state.subcategory4;
         break;
-      case 'Game-Mechanics':
+      case 'game-mechanics':
         sub = state.subcategory7;
         break;
       default:
         sub = state.category;
     }
     if (state.search === '') {
-      type = 'List';
+      type = 'list';
     } else {
       type = sub;
     }
@@ -59,74 +59,74 @@ const Search = ({ search, setType }) => {
         onChange={handleChange}
       ></input>
       <select id='category' onChange={handleChange} value={state.category}>
-        <option value='Character-Data'>Character Data</option>
-        <option value='Classes'>Classes</option>
-        <option value='Races'>Races</option>
-        <option value='Equipment'>Equipment</option>
-        <option value='Spells'>Spells</option>
-        <option value='Monsters'>Monsters</option>
-        <option value='Game-Mechanics'>Game Mechanics</option>
+        <option value='character-data'>Character Data</option>
+        <option value='classes'>Classes</option>
+        <option value='races'>Races</option>
+        <option value='equipment'>Equipment</option>
+        <option value='spells'>Spells</option>
+        <option value='monsters'>Monsters</option>
+        <option value='game-mechanics'>Game Mechanics</option>
       </select>
-      {state.category === 'Character-Data' && (
+      {state.category === 'character-data' && (
         <select
           id='subcategory1'
           onChange={handleChange}
           value={state.subcategory1}
         >
-          <option value='Ability-Scores'>Ability Scores</option>
-          <option value='Skills'>Skills</option>
-          <option value='Proficiencies'>Proficiencies</option>
-          <option value='Languages'>Languages</option>
+          <option value='ability-scores'>Ability Scores</option>
+          <option value='skills'>Skills</option>
+          <option value='proficiencies'>Proficiencies</option>
+          <option value='languages'>Languages</option>
         </select>
       )}
-      {state.category === 'Classes' && (
+      {state.category === 'classes' && (
         <select
           id='subcategory2'
           onChange={handleChange}
           value={state.subcategory2}
         >
-          <option value='Classes'>Classes</option>
-          <option value='Subclasses'>Subclasses</option>
-          <option value='Features'>Features</option>
+          <option value='classes'>Classes</option>
+          <option value='subclasses'>Subclasses</option>
+          <option value='features'>Features</option>
         </select>
       )}
-      {state.category === 'Races' && (
+      {state.category === 'races' && (
         <select
           id='subcategory3'
           onChange={handleChange}
           value={state.subcategory3}
         >
-          <option value='Races'>Races</option>
-          <option value='Subraces'>Subraces</option>
-          <option value='Traits'>Traits</option>
+          <option value='races'>Races</option>
+          <option value='subraces'>Subraces</option>
+          <option value='traits'>Traits</option>
         </select>
       )}
-      {state.category === 'Equipment' && (
+      {state.category === 'equipment' && (
         <select
           id='subcategory4'
           onChange={handleChange}
           value={state.subcategory4}
         >
-          <option value='Equipment-Categories'>Equipment Categories</option>
-          <option value='Weapons'>Weapons</option>
-          <option value='Armor'>Armor</option>
-          <option value='Adventuring-Gear'>Adventuring Gear</option>
-          <option value='Weapon-Properties'>Weapon Properties</option>
+          <option value='equipment-categories'>Equipment Categories</option>
+          <option value='weapons'>Weapons</option>
+          <option value='armor'>Armor</option>
+          <option value='adventuring-Gear'>Adventuring Gear</option>
+          <option value='weapon-Properties'>Weapon Properties</option>
         </select>
       )}
-      {state.category === 'Game-Mechanics' && (
+      {state.category === 'game-mechanics' && (
         <select
           id='subcategory7'
           onChange={handleChange}
           value={state.subcategory7}
         >
-          <option value='Conditions'>Conditions</option>
-          <option value='Damage-Types'>Damage Types</option>
-          <option value='Magic-Schools'>Magic Schools</option>
+          <option value='conditions'>Conditions</option>
+          <option value='damage-types'>Damage Types</option>
+          <option value='magic-schools'>Magic Schools</option>
         </select>
       )}
 
-      <input type='submit' onClick={submit} value='Search'></input>
+      <input type='submit' onClick={submit} value='search'></input>
     </div>
   );
 };

@@ -13,14 +13,14 @@ const Proficiencies = ({ name, type, classes, races, search }) => {
       {classes.map(item => (
         <button
           className='link'
-          onClick={() => handleLink(item.url, 'Classes')}
+          onClick={() => handleLink(item.url, 'classes')}
         >
           {item.name}
         </button>
       ))}
       <h2>Races who have Proficiency:</h2>
       {races.map(item => (
-        <button className='link' onClick={() => handleLink(item.url, 'Races')}>
+        <button className='link' onClick={() => handleLink(item.url, 'races')}>
           {item.name}
         </button>
       ))}

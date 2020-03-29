@@ -42,8 +42,6 @@ export default class Home extends Component {
         {this.state.result && (
           <Results
             search={this.search}
-            setType={this.setType}
-            clear={this.clear}
             result={this.state.result}
             type={this.state.type}
           />

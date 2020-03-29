@@ -2,7 +2,10 @@ import React from 'react';
 
 const List = ({ results, search }) => {
   const handleLink = url => {
-    search(url, 'Skills');
+    let type = url.split('/');
+    console.log(type);
+    type = type[2];
+    search(url, type);
   };
   return (
     <div>

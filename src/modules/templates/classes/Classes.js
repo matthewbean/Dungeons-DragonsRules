@@ -19,12 +19,11 @@ const Classes = ({
     const skill = /Skill:/;
     let newUrl = name;
     if (skill.test(name)) {
-      type = 'Skill';
       newUrl = newUrl.split(': ');
       newUrl = newUrl[1].split(' ');
       newUrl = newUrl.join('-');
       newUrl = `/api/skills/${newUrl}`;
-      search(newUrl, 'Skills');
+      search(newUrl, 'skills');
     } else {
       search(url, type);
     }
@@ -37,7 +36,7 @@ const Classes = ({
       {proficiencies.map((item, i) => (
         <button
           className='link'
-          onClick={() => handleLink(item.url, 'Proficiencies')}
+          onClick={() => handleLink(item.url, 'proficiencies')}
           key={i}
         >
           {item.name}
@@ -50,7 +49,7 @@ const Classes = ({
             <button
               className='link'
               onClick={() =>
-                handleCheckLink(item.name, item.url, 'Proficiencies')
+                handleCheckLink(item.name, item.url, 'proficiencies')
               }
             >
               {item.name}
@@ -61,7 +60,7 @@ const Classes = ({
       <h2>Saving Throws:</h2>
       {saving_throws.map((item, i) => (
         <button
-          onClick={() => handleLink(item.url, 'Ability-Scores')}
+          onClick={() => handleLink(item.url, 'ability-scores')}
           className='link'
           key={i}
         >
@@ -72,7 +71,7 @@ const Classes = ({
       {subclasses &&
         subclasses.map((item, i) => (
           <button
-            onClick={() => handleLink(item.url, 'Subclasses')}
+            onClick={() => handleLink(item.url, 'subclasses')}
             className='link'
             key={i}
           >
@@ -88,7 +87,7 @@ const Classes = ({
       </button>
 
       <button
-        onClick={() => handleLink(class_levels.url, 'Class-Levels')}
+        onClick={() => handleLink(class_levels.url, 'class-levels')}
         className='link'
       >
         Class Levels
@@ -96,10 +95,10 @@ const Classes = ({
 
       {spellcasting && (
         <button
-          onClick={() => handleLink(spellcasting.url, 'SpellCasting')}
+          onClick={() => handleLink(spellcasting.url, 'spellcasting')}
           className='link'
         >
-          SpellCasting
+          Spellcasting
         </button>
       )}
     </div>
