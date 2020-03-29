@@ -6,4 +6,6 @@
   cursor: pointer;
   color: blue;
   text-decoration: underline;
+  border: none;
+  font-size: 1rem;
 }

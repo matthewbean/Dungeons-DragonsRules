@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AbilityScores = ({ desc, full_name, skills, clear, search, setType }) => {
+const AbilityScores = ({ desc, full_name, skills, search }) => {
   const handleLink = url => {
     search(url, 'Skills');
   };

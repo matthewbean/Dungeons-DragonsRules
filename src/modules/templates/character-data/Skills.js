@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AbilityScores = ({ desc, name, ability_score, search }) => {
+const Skills = ({ desc, name, ability_score, search }) => {
   const handleLink = url => {
     search(url, 'Ability-Scores');
   };
@@ -19,4 +19,4 @@ const AbilityScores = ({ desc, name, ability_score, search }) => {
   );
 };
 
-export default AbilityScores;
+export default Skills;

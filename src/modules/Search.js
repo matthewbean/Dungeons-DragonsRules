@@ -14,11 +14,11 @@ const Search = ({ search, setType }) => {
   const handleChange = e =>
     setState({ ...state, [e.target.id]: e.target.value });
 
-  const submit = e => {
+  const submit = () => {
     //set subcategory for search
     let sub;
     let type;
-    let fixedSearch = state.search;
+
     switch (state.category) {
       case 'Character-Data':
         sub = state.subcategory1;
@@ -38,11 +38,12 @@ const Search = ({ search, setType }) => {
       default:
         sub = state.category;
     }
-    if (fixedSearch === '') {
+    if (state.search === '') {
       type = 'List';
     } else {
       type = sub;
     }
+    let fixedSearch = state.search;
     fixedSearch = fixedSearch.split(' ');
     fixedSearch = fixedSearch.join('-');
     fixedSearch = `/api/${sub}/${fixedSearch}`;
@@ -87,8 +88,6 @@ const Search = ({ search, setType }) => {
           <option value='Classes'>Classes</option>
           <option value='Subclasses'>Subclasses</option>
           <option value='Features'>Features</option>
-          <option value='Spellcasting'>Spellcasting</option>
-          <option value='Starting-Equipment'>Starting Equipment</option>
         </select>
       )}
       {state.category === 'Races' && (
