@@ -9,6 +9,7 @@ import StartingEquipment from '../modules/templates/classes/StartingEquipment';
 import List from '../modules/templates/other/List';
 import Subclasses from './templates/classes/Subclasses';
 import Features from './templates/classes/Features';
+import ClassLevels from './templates/classes/ClassLevels';
 
 const Results = ({ result, type, search }) => {
   return (
@@ -91,6 +92,9 @@ const Results = ({ result, type, search }) => {
           starting_equipment={result.starting_equipment}
           search={search}
         />
+      )}
+      {type === 'class-levels' && (
+        <ClassLevels result={result} search={search} />
       )}
 
       {type === 'list' && <List results={result.results} search={search} />}
