@@ -14,3 +14,6 @@
 .inline {
   display: inline;
 }
+.title {
+  font-weight: bold;
+}

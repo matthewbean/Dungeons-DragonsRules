@@ -42,8 +42,8 @@ const Classes = ({
           {item.name}
         </button>
       ))}
-      {proficiency_choices.map(item => (
-        <div>
+      {proficiency_choices.map((item, i) => (
+        <div key={i}>
           <h2>Select {item.choose}</h2>
           {item.from.map(item => (
             <button

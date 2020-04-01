@@ -7,8 +7,7 @@ const Search = ({ search, setType }) => {
     subcategory1: 'ability-scores',
     subcategory2: 'classes',
     subcategory3: 'races',
-    subcategory4: 'equipment',
-    subcategory7: 'conditions'
+    subcategory4: 'equipment'
   });
 
   const handleChange = e =>
@@ -31,9 +30,6 @@ const Search = ({ search, setType }) => {
         break;
       case 'equipment':
         sub = state.subcategory4;
-        break;
-      case 'game-mechanics':
-        sub = state.subcategory7;
         break;
       default:
         sub = state.category;
@@ -65,7 +61,6 @@ const Search = ({ search, setType }) => {
         <option value='equipment'>Equipment</option>
         <option value='spells'>Spells</option>
         <option value='monsters'>Monsters</option>
-        <option value='game-mechanics'>Game Mechanics</option>
       </select>
       {state.category === 'character-data' && (
         <select
@@ -97,7 +92,6 @@ const Search = ({ search, setType }) => {
           value={state.subcategory3}
         >
           <option value='races'>Races</option>
-          <option value='subraces'>Subraces</option>
           <option value='traits'>Traits</option>
         </select>
       )}
@@ -107,22 +101,8 @@ const Search = ({ search, setType }) => {
           onChange={handleChange}
           value={state.subcategory4}
         >
-          <option value='equipment-categories'>Equipment Categories</option>
-          <option value='weapons'>Weapons</option>
-          <option value='armor'>Armor</option>
-          <option value='adventuring-Gear'>Adventuring Gear</option>
+          <option value='equipment'>Equipment</option>
           <option value='weapon-Properties'>Weapon Properties</option>
-        </select>
-      )}
-      {state.category === 'game-mechanics' && (
-        <select
-          id='subcategory7'
-          onChange={handleChange}
-          value={state.subcategory7}
-        >
-          <option value='conditions'>Conditions</option>
-          <option value='damage-types'>Damage Types</option>
-          <option value='magic-schools'>Magic Schools</option>
         </select>
       )}
 
