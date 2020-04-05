@@ -7,20 +7,24 @@ const Features = ({ className, spellcasting_ability, info, search }) => {
   return (
     <div>
       <h1>{className.name} Spellcasting</h1>
-      <h2>Modified By:</h2>
-      <button
-        className='link'
-        onClick={() => handleLink(spellcasting_ability.url, 'ability-score')}
-      >
-        {spellcasting_ability.name}
-      </button>
-      <h2>Description:</h2>
-      {info.map((item, i) => (
-        <div key={i}>
-          <h3>{item.name}</h3>
-          <p>{item.desc}</p>
-        </div>
-      ))}
+      <div className='section'>
+        <h2>Modified By:</h2>
+        <button
+          className='link'
+          onClick={() => handleLink(spellcasting_ability.url, 'ability-score')}
+        >
+          {spellcasting_ability.name}
+        </button>
+      </div>
+      <div className='section'>
+        <h2>Description:</h2>
+        {info.map((item, i) => (
+          <div key={i}>
+            <h3>{item.name}</h3>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

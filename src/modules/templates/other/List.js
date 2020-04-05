@@ -10,11 +10,13 @@ const List = ({ results, search }) => {
   return (
     <div>
       <h1>Results:</h1>
-      {results.map((item, i) => (
-        <button key={i} className='link' onClick={() => handleLink(item.url)}>
-          {item.name}
-        </button>
-      ))}
+      <div className='section'>
+        {results.map((item, i) => (
+          <button key={i} className='link' onClick={() => handleLink(item.url)}>
+            {item.name}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

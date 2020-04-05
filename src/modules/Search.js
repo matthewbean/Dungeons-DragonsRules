@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Search = ({ search, setType }) => {
+const Search = ({ search }) => {
   const [state, setState] = useState({
     search: '',
     category: 'character-data',

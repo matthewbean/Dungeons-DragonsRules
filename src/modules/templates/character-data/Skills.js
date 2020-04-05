@@ -7,14 +7,18 @@ const Skills = ({ desc, name, ability_score, search }) => {
   return (
     <div>
       <h1>{name}</h1>
-      <h2>Description:</h2>
-      {desc.map(item => (
-        <p>{item}</p>
-      ))}
-      <h2>Modified by:</h2>
-      <button className='link' onClick={() => handleLink(ability_score.url)}>
-        {ability_score.name}
-      </button>
+      <div className='section'>
+        <h2>Description:</h2>
+        {desc.map(item => (
+          <p>{item}</p>
+        ))}
+      </div>
+      <div className='section'>
+        <h2>Modified by:</h2>
+        <button className='link' onClick={() => handleLink(ability_score.url)}>
+          {ability_score.name}
+        </button>
+      </div>
     </div>
   );
 };

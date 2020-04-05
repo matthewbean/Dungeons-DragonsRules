@@ -12,7 +12,7 @@ const Equipment = ({
   weapon_range,
   cost,
   damage,
-  range,
+  contents,
   properties,
   desc,
   search
@@ -30,7 +30,7 @@ const Equipment = ({
         </div>
       )}
       {equipment_category === 'Weapon' && (
-        <div>
+        <div className='section'>
           <h2>Basic Information:</h2>
           <div>
             <span className='title'>Weapon Category:</span> {weapon_category}
@@ -50,14 +50,13 @@ const Equipment = ({
             <span className='title'>Stealth Disadvantage:</span>
             {stealth_disadvantage}
           </div>
-
           <h2>Properties:</h2>
           {properties.length !== 0 &&
             properties &&
             properties.map(item => (
               <button
                 className='link'
-                onClick={() => handleLink(item.url, 'races')}
+                onClick={() => handleLink(item.url, 'equipment-properties')}
               >
                 {item.name}
               </button>
@@ -65,7 +64,7 @@ const Equipment = ({
         </div>
       )}
       {equipment_category === 'Armor' && (
-        <div>
+        <div className='section'>
           <h2>Basic Information:</h2>
           <div>
             <span className='title'>Armor Category:</span> {armor_category}
@@ -76,13 +75,39 @@ const Equipment = ({
           </div>
         </div>
       )}
-      {weight && <h2>Weight:</h2>}
-      {cost && <div>{weight}lb</div>}
-      {cost && <h2>Cost:</h2>}
+      {contents && contents.length !== 0 && (
+        <div className='section'>
+          <h2>Contents:</h2>
+          {contents.map(item => (
+            <div>
+              {item.quantity}x
+              <button
+                className='link inline'
+                onClick={() => handleLink(item.item_url, 'equipment')}
+              >
+                {item.item_url
+                  .split('/')[3]
+                  .split('-')
+                  .join(' ')}
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {weight && (
+        <div className='section'>
+          <h2>Weight:</h2>
+          {weight}lb
+        </div>
+      )}
       {cost && (
-        <div>
-          {cost.quantity}
-          {cost.unit}
+        <div className='section'>
+          <h2>Cost:</h2>
+          <div>
+            {cost.quantity}
+            {cost.unit}
+          </div>
         </div>
       )}
     </div>

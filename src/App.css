@@ -1,5 +1,10 @@
 * {
 }
+body {
+  background-image: url(./assets/background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+}
 .main {
   padding: 20px;
 }
@@ -10,6 +15,7 @@
   text-decoration: underline;
   border: none;
   font-size: 1rem;
+  background-color: transparent;
 }
 .inline {
   display: inline;

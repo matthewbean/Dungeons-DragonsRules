@@ -1,22 +1,24 @@
 import React from 'react';
 import AbilityScores from './templates/character-data/AbilityScores';
-import Skills from '../modules/templates/character-data/Skills';
-import Proficiencies from '../modules/templates/character-data/Proficiencies';
-import Languages from '../modules/templates/character-data/Languages';
+import Skills from './templates/character-data/Skills';
+import Proficiencies from './templates/character-data/Proficiencies';
+import Languages from './templates/character-data/Languages';
 import Classes from './templates/classes/Classes';
-import StartingEquipment from '../modules/templates/classes/StartingEquipment';
-import SpellCasting from '../modules/templates/classes/SpellCasting';
-import Traits from '../modules/templates/races/Traits';
-import Equipment from '../modules/templates/equipment/Equipment';
-import Spells from '../modules/templates/spells/Spells';
-import MagicSchools from '../modules/templates/spells/MagicSchools';
-
-import List from '../modules/templates/other/List';
+import StartingEquipment from './templates/classes/StartingEquipment';
+import SpellCasting from './templates/classes/SpellCasting';
+import Traits from './templates/races/Traits';
+import Equipment from './templates/equipment/Equipment';
+import EquipmentProperties from './templates/equipment/EquipmentProperties';
+import Spells from './templates/spells/Spells';
+import MagicSchools from './templates/spells/MagicSchools';
 import Subclasses from './templates/classes/Subclasses';
 import Features from './templates/classes/Features';
 import ClassLevels from './templates/classes/ClassLevels';
 import Races from './templates/races/Races';
 import Monsters from './templates/monsters/Monsters';
+
+import NotFound from './templates/other/NotFound';
+import List from './templates/other/List';
 
 const Results = ({ result, type, search }) => {
   return (
@@ -149,12 +151,16 @@ const Results = ({ result, type, search }) => {
           stealth_disadvantage={result.stealth_disadvantage}
           weight={result.weight}
           cost={result.cost}
+          contents={result.contents}
           damage={result.damage}
           range={result.range}
           properties={result.properties}
           desc={result.desc}
-          search={result.search}
+          search={search}
         />
+      )}
+      {type === 'equipment-properties' && (
+        <EquipmentProperties name={result.name} desc={result.desc} />
       )}
       {type === 'spells' && (
         <Spells
@@ -203,10 +209,10 @@ const Results = ({ result, type, search }) => {
           special_abilities={result.special_abilities}
           actions={result.actions}
           legendary_actions={result.legendary_actions}
-          seach={search}
+          search={search}
         />
       )}
-
+      {type === 'not-found' && <NotFound />}
       {type === 'list' && <List results={result.results} search={search} />}
     </div>
   );

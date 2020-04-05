@@ -36,7 +36,7 @@ const ClassLevels = ({ result, search }) => {
       <h1>{result[0].class.name}</h1>
 
       {result.map((item, i) => (
-        <div key={i}>
+        <div key={i} className='section'>
           <h2>Level {item.level}</h2>
           <h4>Proficiency Bonus: {item.prof_bonus}</h4>
           <h4>Ability Score Bonuses: {item.ability_score_bonuses}</h4>
