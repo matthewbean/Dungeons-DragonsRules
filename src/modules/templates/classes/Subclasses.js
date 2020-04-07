@@ -7,7 +7,7 @@ const Subclasses = ({
   features,
   spells,
   subclass_flavor,
-  search
+  search,
 }) => {
   const handleLink = (url, type) => {
     search(url, type);
@@ -28,13 +28,14 @@ const Subclasses = ({
       <div className='section'>
         <h2>{subclass_flavor}:</h2>
         {desc.map((item, i) => (
-          <p>{item}</p>
+          <p key={i}>{item}</p>
         ))}
       </div>
       <div className='section'>
         <h2>Features:</h2>
-        {features.map(item => (
+        {features.map((item, i) => (
           <button
+            key={i}
             className='link'
             onClick={() => handleLink(item.url, 'features')}
           >

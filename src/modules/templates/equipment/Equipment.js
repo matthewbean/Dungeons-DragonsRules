@@ -15,7 +15,7 @@ const Equipment = ({
   contents,
   properties,
   desc,
-  search
+  search,
 }) => {
   const handleLink = (url, type) => {
     search(url, type);
@@ -26,7 +26,7 @@ const Equipment = ({
       {desc && (
         <div>
           <h2>Description: </h2>
-          {desc && desc.map(item => <p>{item}</p>)}
+          {desc && desc.map((item, i) => <p key={i}>{item}</p>)}
         </div>
       )}
       {equipment_category === 'Weapon' && (
@@ -53,8 +53,9 @@ const Equipment = ({
           <h2>Properties:</h2>
           {properties.length !== 0 &&
             properties &&
-            properties.map(item => (
+            properties.map((item, i) => (
               <button
+                key={i}
                 className='link'
                 onClick={() => handleLink(item.url, 'equipment-properties')}
               >
@@ -78,29 +79,25 @@ const Equipment = ({
       {contents && contents.length !== 0 && (
         <div className='section'>
           <h2>Contents:</h2>
-          {contents.map(item => (
-            <div>
+          {contents.map((item, i) => (
+            <div key={i}>
               {item.quantity}x
               <button
                 className='link inline'
                 onClick={() => handleLink(item.item_url, 'equipment')}
               >
-                {item.item_url
-                  .split('/')[3]
-                  .split('-')
-                  .join(' ')}
+                {item.item_url.split('/')[3].split('-').join(' ')}
               </button>
             </div>
           ))}
         </div>
       )}
 
-      {weight && (
-        <div className='section'>
-          <h2>Weight:</h2>
-          {weight}lb
-        </div>
-      )}
+      <div className='section'>
+        <h2>Weight:</h2>
+        {weight}lb
+      </div>
+
       {cost && (
         <div className='section'>
           <h2>Cost:</h2>

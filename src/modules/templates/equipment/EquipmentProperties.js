@@ -6,8 +6,8 @@ const Skills = ({ desc, name }) => {
       <h1>{name}</h1>
       <div className='section'>
         <h2>Description:</h2>
-        {desc.map(item => (
-          <p>{item}</p>
+        {desc.map((item, i) => (
+          <p key={i}>{item}</p>
         ))}
       </div>
     </div>

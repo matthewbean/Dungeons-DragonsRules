@@ -25,7 +25,7 @@ const Monsters = ({
   special_abilities,
   actions,
   legendary_actions,
-  search
+  search,
 }) => {
   const handleCheckLink = (name, url, type) => {
     const skill = /Skill:/;
@@ -139,7 +139,7 @@ const Monsters = ({
             <div className='inline'> none</div>
           )}
           {damage_vulnerabilities.map((item, i) => (
-            <div className='inline'>
+            <div className='inline' key={i}>
               {item}
               {i !== damage_vulnerabilities.length - 1 && ', '}
             </div>

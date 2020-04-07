@@ -4,6 +4,7 @@ body {
   background-image: url(./assets/background.jpg);
   background-attachment: fixed;
   background-position: center;
+  font-family: 'IM Fell French Canon SC', serif;
 }
 .main {
   padding: 20px;
@@ -11,15 +12,21 @@ body {
 .link {
   display: block;
   cursor: pointer;
-  color: blue;
+  color: #792a03;
   text-decoration: underline;
   border: none;
   font-size: 1rem;
   background-color: transparent;
+  font-family: 'IM Fell French Canon SC', serif;
 }
 .inline {
   display: inline;
 }
 .title {
   font-weight: bold;
+}
+input {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 3px;
+  border-radius: 5px;
 }

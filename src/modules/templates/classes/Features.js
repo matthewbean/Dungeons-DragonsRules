@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Features = ({ name, baseClass, desc, level, search }) => {
-  const handleLink = url => {
+  const handleLink = (url) => {
     search(url, 'classes');
   };
   return (
@@ -9,8 +9,8 @@ const Features = ({ name, baseClass, desc, level, search }) => {
       <h1>{name}</h1>
       <div className='section'>
         <h2>Description:</h2>
-        {desc.map(item => (
-          <p>{item}</p>
+        {desc.map((item, i) => (
+          <p key={i}>{item}</p>
         ))}
       </div>
       <div className='section'>

@@ -13,8 +13,9 @@ const Proficiencies = ({ name, type, classes, races, search }) => {
       </div>
       <div className='section'>
         <h2>Classes who have Proficiency:</h2>
-        {classes.map(item => (
+        {classes.map((item, i) => (
           <button
+            key={i}
             className='link'
             onClick={() => handleLink(item.url, 'classes')}
           >
@@ -24,8 +25,9 @@ const Proficiencies = ({ name, type, classes, races, search }) => {
       </div>
       <div className='section'>
         <h2>Races who have Proficiency:</h2>
-        {races.map(item => (
+        {races.map((item, i) => (
           <button
+            key={i}
             className='link'
             onClick={() => handleLink(item.url, 'races')}
           >

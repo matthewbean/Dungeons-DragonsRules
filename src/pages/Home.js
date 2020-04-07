@@ -9,7 +9,7 @@ export default class Home extends Component {
     this.state = {
       result: null,
       type: null,
-      loading: false
+      loading: false,
     };
   }
 
@@ -22,7 +22,7 @@ export default class Home extends Component {
         ...this.state,
         result: res.data,
         loading: false,
-        type: type
+        type: type,
       });
       console.log(res);
     } catch (err) {
@@ -30,7 +30,7 @@ export default class Home extends Component {
       this.setState({
         ...this.state,
         type: 'not-found',
-        result: null
+        result: null,
       });
     }
     document.body.scrollTop = 0; // For Safari
@@ -41,7 +41,7 @@ export default class Home extends Component {
     return (
       <div className='main'>
         <Search search={this.search} setType={this.setType} />
-        {this.state.result && (
+        {this.state.type && (
           <Results
             search={this.search}
             result={this.state.result}

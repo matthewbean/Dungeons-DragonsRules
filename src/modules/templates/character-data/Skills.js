@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Skills = ({ desc, name, ability_score, search }) => {
-  const handleLink = url => {
+  const handleLink = (url) => {
     search(url, 'ability-scores');
   };
   return (
@@ -9,8 +9,8 @@ const Skills = ({ desc, name, ability_score, search }) => {
       <h1>{name}</h1>
       <div className='section'>
         <h2>Description:</h2>
-        {desc.map(item => (
-          <p>{item}</p>
+        {desc.map((item, i) => (
+          <p key={i}>{item}</p>
         ))}
       </div>
       <div className='section'>

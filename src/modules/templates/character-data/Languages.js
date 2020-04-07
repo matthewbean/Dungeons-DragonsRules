@@ -10,8 +10,10 @@ const Languages = ({ script, typical_speakers, name }) => {
       </div>
       <div className='section'>
         <h2>typical speakers:</h2>
-        {typical_speakers.map(item => (
-          <div className='list'>{item}</div>
+        {typical_speakers.map((item, i) => (
+          <div key={i} className='list'>
+            {item}
+          </div>
         ))}
       </div>
     </div>
