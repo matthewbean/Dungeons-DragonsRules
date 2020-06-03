@@ -16,7 +16,7 @@ export default class Home extends Component {
   search = async (search, type) => {
     search = search.toLowerCase();
     try {
-      let res = await axios.get(`http://www.dnd5eapi.co${search}`);
+      let res = await axios.get(`https://www.dnd5eapi.co${search}`);
       //fetch new results and set loading to false
       this.setState({
         ...this.state,
