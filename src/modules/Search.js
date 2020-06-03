@@ -7,10 +7,10 @@ const Search = ({ search }) => {
     subcategory1: 'ability-scores',
     subcategory2: 'classes',
     subcategory3: 'races',
-    subcategory4: 'equipment'
+    subcategory4: 'equipment',
   });
 
-  const handleChange = e =>
+  const handleChange = (e) =>
     setState({ ...state, [e.target.id]: e.target.value });
 
   const submit = () => {
@@ -47,14 +47,20 @@ const Search = ({ search }) => {
     search(fixedSearch, type);
   };
   return (
-    <div>
+    <div className='nav'>
       <input
         id='search'
         type='text'
         value={state.search}
         onChange={handleChange}
+        className='search'
       ></input>
-      <select id='category' onChange={handleChange} value={state.category}>
+      <select
+        id='category'
+        onChange={handleChange}
+        value={state.category}
+        className='select'
+      >
         <option value='character-data'>Character Data</option>
         <option value='classes'>Classes</option>
         <option value='races'>Races</option>
@@ -67,6 +73,7 @@ const Search = ({ search }) => {
           id='subcategory1'
           onChange={handleChange}
           value={state.subcategory1}
+          className='select'
         >
           <option value='ability-scores'>Ability Scores</option>
           <option value='skills'>Skills</option>
@@ -79,6 +86,7 @@ const Search = ({ search }) => {
           id='subcategory2'
           onChange={handleChange}
           value={state.subcategory2}
+          className='select'
         >
           <option value='classes'>Classes</option>
           <option value='subclasses'>Subclasses</option>
@@ -90,6 +98,7 @@ const Search = ({ search }) => {
           id='subcategory3'
           onChange={handleChange}
           value={state.subcategory3}
+          className='select'
         >
           <option value='races'>Races</option>
           <option value='traits'>Traits</option>
@@ -100,13 +109,19 @@ const Search = ({ search }) => {
           id='subcategory4'
           onChange={handleChange}
           value={state.subcategory4}
+          className='select'
         >
           <option value='equipment'>Equipment</option>
           <option value='weapon-Properties'>Weapon Properties</option>
         </select>
       )}
 
-      <input type='submit' onClick={submit} value='search'></input>
+      <input
+        className='submit'
+        type='submit'
+        onClick={submit}
+        value='search'
+      ></input>
     </div>
   );
 };

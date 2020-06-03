@@ -9,6 +9,22 @@ body {
 .main {
   padding: 20px;
 }
+.nav {
+  padding: 10px;
+  background-color: black;
+}
+input {
+  padding: 0 5px;
+  border-radius: 5px;
+  max-width: 90px;
+  margin-left: 10px;
+}
+.submit {
+  padding: 1px 5px;
+}
+.select {
+  margin-left: 10px;
+}
 .link {
   display: block;
   cursor: pointer;
@@ -24,9 +40,4 @@ body {
 }
 .title {
   font-weight: bold;
-}
-input {
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 3px;
-  border-radius: 5px;
 }

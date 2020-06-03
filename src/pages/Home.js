@@ -39,15 +39,17 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className='main'>
+      <div>
         <Search search={this.search} setType={this.setType} />
-        {this.state.type && (
-          <Results
-            search={this.search}
-            result={this.state.result}
-            type={this.state.type}
-          />
-        )}
+        <div className='main'>
+          {this.state.type && (
+            <Results
+              search={this.search}
+              result={this.state.result}
+              type={this.state.type}
+            />
+          )}
+        </div>
       </div>
     );
   }
